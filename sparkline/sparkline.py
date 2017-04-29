@@ -60,7 +60,7 @@ def dotify(series):
     return ''.join(buf)
 
 
-def sparkify(series):
+def sparkify(series, minimum=None, maximum=None):
     u"""Converts <series> to a sparkline string.
 
     Example:
@@ -75,8 +75,10 @@ def sparkify(series):
     Raises TypeError if series is not an iterable.
     """
     series = [ float(i) for i in series ]
-    minimum = min(series)
-    maximum = max(series)
+    if minimum is None:
+        minimum = min(series)
+    if maximum is None:
+        maximum = max(series)
     data_range = maximum - minimum
     if data_range == 0.0:
         # Graph a baseline if every input value is equal.
