@@ -10,6 +10,7 @@ Output is always UTF-8 encoded.
 
 Usage:
 
+
 - $ ``sparkline 4 3 2 1``
   █▆▃▁
 - $ ``echo "1.0 1.0 2.0 3.0 5.0 8.0 13.0" | sparkline``
